@@ -8,7 +8,7 @@ mod wani;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    let mut app = App::new();
+    let mut app = App::new().await;
     ratatui::run(|terminal| app.run(terminal))?;
     Ok(())
 }

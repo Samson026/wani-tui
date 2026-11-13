@@ -14,7 +14,7 @@ impl WaniService {
 
         Self { client, state }
     }
-    async fn update_reviews(&mut self) {
+    pub async fn update_reviews(&mut self) {
         let summary = self.client.get_summary().await.unwrap();
         for &id in &summary.data.reviews.first().unwrap().subject_ids {
             self.state
